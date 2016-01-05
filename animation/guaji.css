@@ -1,0 +1,10 @@
+.smart_ani {
+	background: url(smart.png);
+	width: 4680px;
+	height: 61px;
+	animation:anikeyframes3_4_1 1.2s 40ms steps(12) infinite;
+}
+
+@keyframes anikeyframes3_4_1 {
+	100%  {transform: translateX(-100%);}
+}

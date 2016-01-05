@@ -1,0 +1,52 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Test Any Thing</title>
+
+<script type="text/javascript">
+	function print(msg)
+	{
+		// var o = document.getElementById("out-div"); 
+		// o.innerHTML  += "<br>" + msg;
+		console.log(msg);
+	}	
+
+	function handle_key_down(e){
+		print(e.keyCode);
+	}
+
+	var setFocusToInput = function(){
+		var t = document.getElementById("text-input"); 
+		t.focus(); 
+		t.setSelectionRange(0, 1); 
+		t.setRangeText("hello"); 
+		t.setSelectionRange(0, 1);
+	}
+
+	function set_focus()
+	{
+		print("set_focus");
+		//setTimeout(setFocusToInput, 1000);
+		setFocusToInput();
+	}
+
+	function handle_blur()
+	{
+		print("blur");
+	}
+
+</script>
+</head>
+
+<body onfocus="set_focus()" onblur="handle_blur()" style="background-color:blue;">
+<div onfocuschanged="set_focus()" onclick="set_focus()" style="background-color:red;">
+
+<input type="text" id="text-input"/>
+
+<div id="out-div">
+</div>
+
+</div>
+
+</body>
+</html>

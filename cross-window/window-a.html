@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>window A</title>
+<script src="/browserjs/html.js"></script>
+<script type="text/javascript">
+
+	var origin = "http://tech.seasky.com";
+	var bUrl = "http://tech.seasky.com/browser/w3c/cross-window/window-b.html"; 
+	var cUrl = "http://tech.seasky.com/browser/w3c/cross-window/window-c.html"; 
+	var windowB;
+	var windowC; 
+	var msg = "Message from window A!";
+
+	function do_onload()
+	{
+		window.addEventListener("message", receiveMessage, false);
+		windowB = window.open(bUrl);
+		windowC = window.open(cUrl);
+		
+		//stringWindowB = JSON.stringify(windowB)
+		//localStorage.setItem("window-b", stringWindowB);
+		page.print(JSON.parse(localStorage.getItem("window-b")).location);
+	}
+
+	function postMessage2WindowB()
+	{
+		if (windowB){
+			windowB.postMessage(msg, window.location);
+		}
+	}
+
+	function postMessage2WindowC()
+	{
+		windowC.postMessage(msg, window.location);
+	}
+
+	
+	function receiveMessage(event)
+	{
+		if (event.origin !== origin)
+			return;
+
+		page.print("MSG: " + event.data + "; from: " + event.source.location);
+	}
+
+</script>
+</head>
+
+<body onload="do_onload()">
+<div>
+	<button onclick="postMessage2WindowB()">post message to B</button>
+	<button onclick="postMessage2WindowC()">post message to C</button>
+</div>
+
+</body>
+</html>

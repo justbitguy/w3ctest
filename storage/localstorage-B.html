@@ -1,0 +1,30 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Local Storage</title>
+<script src="/browserjs/page_log.js"></script>
+<script type="text/javascript">
+	function setStorage() 
+	{
+		var value = "localstorage-B"; 
+		localStorage.setItem("name", value); 
+		page.print("setItem: " + value);
+	}
+
+	function getStorage() 
+	{
+		page.print("name: " + localStorage.getItem("name"));
+	}
+
+</script>
+</head>
+
+<body>
+
+<div>Local Storage</div>
+<div>
+<button onclick="setStorage()">set storage</button>
+<button onclick="getStorage()">get storage</button>
+</div>
+</body>
+</html>

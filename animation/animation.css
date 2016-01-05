@@ -1,0 +1,10 @@
+@-webkit-keyframes fight_point_effect_ani {
+    100%  {transform:translateX(-100%);}
+}
+
+.fight_point_effect {
+    width: 6144px;
+    height: 150px;
+    background: url(zhandouli2.png) no-repeat;
+    -webkit-animation: fight_point_effect_ani 2s 50ms steps(24) infinite;
+}

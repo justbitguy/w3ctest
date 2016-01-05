@@ -1,0 +1,25 @@
+
+@-webkit-keyframes item-quality-effect-ani {
+	100%  {transform:translateX(-100%);}
+}
+
+.item-quality-effect-orange {
+	width: 630px;
+	height: 70px;
+	background: url(chengsepingzhizhuangbeitexiao.png) no-repeat;
+	-webkit-animation: item-quality-effect-ani 1.0s steps(9) infinite;
+}
+
+.item-quality-effect-golden {
+	width: 630px;
+	height: 70px;
+	background: url(jinsepingzhizhuangbeitexiao.png) no-repeat;
+	-webkit-animation: item-quality-effect-ani 1.0s steps(9) infinite;
+}
+
+.item-quality-effect-purple {
+	width: 630px;
+	height: 70px;
+	background: url(zisepinzhizhuangbeitexiao.png) no-repeat;
+	-webkit-animation: item-quality-effect-ani 1.0s steps(9) infinite;
+}

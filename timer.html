@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Timer</title>
+<script type="text/javascript" src="http://tech.seasky.com/browser/basejs/base.js"></script>
+<script type="text/javascript">
+var callback = function () {
+  print("timer fire now.");
+}
+
+var startTimeout = function(){
+  setTimeout(callback, 2000);
+}
+</script>
+</head>
+
+<body>
+<div>
+<button onclick="startTimeout()">startTimeout</button>
+</div>
+</body>
+
+</html>

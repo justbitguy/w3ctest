@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="/browserjs/page_log.js"></script>
+<script type="text/javascript">
+	function do_click()
+	{
+		if(window.parent)
+		{
+			page.print("window parent: " +  window.parent.location);
+		}
+
+		if (window.opener)
+		{
+			page.print("window opener: " + window.opener.location);
+		}
+	}	
+
+</script>
+</head>
+
+<body>
+<div>
+ <button onclick="do_click()">show parent-window</button>
+</div>
+</body>
+</html>

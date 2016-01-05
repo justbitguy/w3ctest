@@ -1,0 +1,40 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>window C</title>
+<script src="/browserjs/html.js"></script>
+<script type="text/javascript">
+
+	var origin = "http://tech.seasky.com";
+	var thisUrl = window.location;
+	var msg = "Message from window C!"
+
+	function do_onload()
+	{
+		window.addEventListener("message", receiveMessage, false); 
+	}
+
+	// receive message and send to another window desinated in message data.
+	function receiveMessage(event)
+	{
+		if(event.origin !== origin)
+			return;
+
+		// send back.
+		util.postMessage(event.source, msg, origin);
+
+		// tranfer to B.
+		var windowB = localStorage.getItem("window-b"); 
+		page.print("windowB: " + windowB.location);
+		util.postMessage(windowB, msg, origin);
+
+	}
+
+</script>
+
+</head>
+
+<body onload="do_onload()">
+<div>window b!</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>GC Test</title>
+<script type="text/javascript" src="http://tech.seasky.com/browser/basejs/base.js"></script>
+<script type="text/javascript" src="gc.js"></script>
+</head>
+
+<body>
+<div>
+<p>Garbage Collection</p>
+<div class="ArrayBuffer">
+  <button onclick="allocateArrayBuffer(10)">allocateArrayBuffer</button>
+  <button onclick="releaseArrayBuffer()">releaseArrayBuffer</button>
+  <button onclick="showArrayBuffer()">showArrayBuffer</button>
+</div>
+
+<div class="Array">
+  <button onclick="allocateArray(10)">allocateArray</button>
+  <button onclick="releaseArray()">releaseArray</button>
+  <button onclick="showArray()">showArray</button>
+</div>
+
+</body>
+</html>
